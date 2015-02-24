@@ -10,8 +10,11 @@
 <body>
 <div class="container">
   <ul class="nav nav-tabs">
-    <li><%= link_to "Home", welcome_index_path %></li>
-    <li><%= link_to "About", welcome_about_path %></li>
+    <li><%= link_to "Home", root_path %></li>
+    <li><%= link_to "About", about_path %></li>
+    <% if current_user %>
+      <li><%= link_to "My List", current_user.list if current_user.list %></li>
+    <% end %>
   </ul>
 
     <p class="notice"><%= notice %></p> <!-- where does this go -->
