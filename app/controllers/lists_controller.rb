@@ -10,6 +10,7 @@ class ListsController < ApplicationController
   def show
     return redirect_to new_list_path unless current_user.list
     @list = current_user.list
+    # @lists = List.find(params[:id]) <-- Possible idea for pulling multiple lists
   end
 
   def new

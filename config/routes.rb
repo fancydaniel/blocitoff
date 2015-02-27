@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :lists
 
   devise_for :users
+    resources :users, only: [:update, :show]
 
   # get 'welcome/index'
   # get 'welcome/about'
@@ -13,7 +14,10 @@ Rails.application.routes.draw do
 
   root to: 'welcome#index'
 
-  resource :lists, except: [:index]
+  resource :lists, except: [:index] do 
+    resource :items, only: [:create]
+    
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
