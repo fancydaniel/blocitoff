@@ -3,19 +3,29 @@ Rails.application.routes.draw do
   # get 'lists/show'
   # get 'lists/new'  <-- Check with Tim before deleting
   # get 'lists/edit'
-  resources :lists
+  #resources :lists  #<-- is this why partial won't render?
 
   devise_for :users
-    resources :users, only: [:update, :show]
+   resources :users, only: [:update, :show] 
+
+
+   # devise_for :users, :skip => [:sessions]
+   # as :user do
+   #  get 'signin' => 'devise/sessions#new', :as => :new_list_path
+   #  post 'signin' => 'devise/sessions#create', :as =>  :root_path
+   #  delete 'signout' => 'devise/sessions#destroy', :as => :destroy_user_session
+   # end
 
   # get 'welcome/index'
   # get 'welcome/about'
   get 'about' => 'welcome#about'
 
-  root to: 'welcome#index'
+  # root to: 'users#show' # added arrow from what I saw on blog app
 
-  resource :lists, except: [:index] do 
-    resource :items, only: [:create]
+  root to: 'welcome#about' 
+
+  resources :lists, except: [:index] do 
+    resources :items, only: [:create]
     
   end
 

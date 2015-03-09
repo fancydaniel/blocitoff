@@ -8,5 +8,5 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
   has_one :list
-  has_many :items
+
 end
