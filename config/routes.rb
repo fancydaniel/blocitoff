@@ -20,9 +20,9 @@ Rails.application.routes.draw do
   # get 'welcome/about'
   get 'about' => 'welcome#about'
 
-  # root to: 'users#show' # added arrow from what I saw on blog app
+  root to: 'users#show' # added arrow from what I saw on blog app
 
-  root to: 'welcome#about' 
+  #root to: 'welcome#about' 
 
   resources :lists, except: [:index] do 
     resources :items, only: [:create]

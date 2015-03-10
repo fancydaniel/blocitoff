@@ -13,7 +13,7 @@
     <li><%= link_to "Home", root_path %></li>
     <li><%= link_to "About", about_path %></li>
     <% if current_user %>
-      <li><%= link_to "My List", current_user.list if current_user.list %></li>
+      <li><%= list_links %></li>
     <% end %>
   </ul>
 

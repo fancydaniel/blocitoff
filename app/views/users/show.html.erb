@@ -1,3 +1,5 @@
-<h2 class="media-heading"><%= @user.name %></h2>
+<h1><%= @list.title  %></h1>
+<%= link_to "Delete List", @list, method: :delete %>
+<h2 class="media-heading"><%= current_user.name %></h2>
 <%= render partial: 'items/form'%>
 <%= render partial: 'items/item', collection: @items %>
