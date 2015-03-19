@@ -11,10 +11,6 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_in_path_for(resource)
-    if current_user
-      current_user
-    else
-      new_user_session_path
-    end
+    current_user
   end
 end
