@@ -1,12 +1,9 @@
 class ItemsController < ApplicationController
 
-  def new
-    # @item = Item.new
-    
-  end
+  respond_to :html, :js
+  helper_method :days_left
 
   def create
-
     @list = List.find(params[:list_id])
 
     @item = Item.new(item_params)
@@ -18,6 +15,29 @@ class ItemsController < ApplicationController
     else
       flash[:error] = "There was a problem saving your item."
       redirect_to current_user
+    end
+  end
+
+  def destroy
+    @list = List.find(params[:list_id])
+    @item = @list.items.find(params[:id])
+    # authorize @item
+
+    if @item.destroy
+      flash[:notice] = "Item was removed."
+      # redirect_to current_user
+    else
+      flash[:error] = "Item could not be deleted."      
+    end
+
+    # respond_to do |format|
+    #   # format.html
+    #   format.js
+    # end
+
+    respond_with(@item) do |format|
+      format.html { redirect_to [@list, @list.items] }
+      format.js
     end
   end
 

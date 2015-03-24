@@ -1,35 +1,16 @@
 Rails.application.routes.draw do
-  # get 'lists/index'
-  # get 'lists/show'
-  # get 'lists/new'  <-- Check with Tim before deleting
-  # get 'lists/edit'
-  #resources :lists  #<-- is this why partial won't render?
+
 
   devise_for :users
    resources :users, only: [:update, :show] 
 
-
-   # devise_for :users, :skip => [:sessions]
-   # as :user do
-   #  get 'signin' => 'devise/sessions#new', :as => :new_list_path
-   #  post 'signin' => 'devise/sessions#create', :as =>  :root_path
-   #  delete 'signout' => 'devise/sessions#destroy', :as => :destroy_user_session
-   # end
-
-  # get 'welcome/index'
-  # get 'welcome/about'
   get 'about' => 'welcome#about'
-
-
- # root to: 'users#show' # added arrow from what I saw on blog app
- 
 
   root to: 'welcome#index' 
 
 
   resources :lists, except: [:index] do 
-    resources :items, only: [:create]
-    
+    resources :items, only: [:create, :destroy]   
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

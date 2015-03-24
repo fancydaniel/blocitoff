@@ -1,0 +1,6 @@
+// $('.item-' +<%= @item.id %>).hide();
+<%- if @item.destroyed? %>
+  $('#item_' +<%= @item.id %>).remove();
+<% else %>
+  $('#item_') +<%= @item.id %>).prepend("<div class='alert alert-danger'><%= flash[:error] %></div>");
+<% end %>
