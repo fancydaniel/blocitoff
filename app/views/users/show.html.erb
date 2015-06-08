@@ -1,5 +1,11 @@
-<h1><%= @list.title  %></h1>
-<small ><%= link_to "Delete List", @list, method: :delete %></small>
+<div class="row">
+  <div class="col-md-8">
+  <span id="list_title"><%= @list.title  %></span>
+    <span><small><%= link_to "Delete List", @list, method: :delete %></small></span>
+  </div>
+  
+</div>
 <h3 class="media-heading"><i><%= current_user.name %></i></h3>
+
 <%= render partial: 'items/form'%>
 <%= render partial: 'items/item', collection: @items %>

@@ -19,9 +19,11 @@
       </ul>
   </div>
 
-
-    <p class="notice"><%= notice %></p> 
-    <p class="alert"><%= alert %></p>  <!-- Part of flash alert on the part of Devise  -->
+  <div class="row">
+    <div class="col-md-6">
+      <div class="notice"><%= notice %></div> 
+      <div class="alert"><%= alert %></div>  
+    </div>
 
     <div class="pull-right user-infor my_user">
       <% if current_user %>
@@ -30,7 +32,8 @@
         <%= link_to "Sign In", new_user_session_path %> or
         <%= link_to "Sign Up", new_user_registration_path %>
       <% end %>
-      </div>
+    </div>
+  </div>
 
 <%= yield %>
 </div>

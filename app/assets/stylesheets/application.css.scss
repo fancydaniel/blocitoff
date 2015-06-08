@@ -54,10 +54,7 @@ li {
 .container-fluid { /* overrode bootstrap style */
   padding-right: 0;
   padding-top: 35px;
-  /*background-color: #ccc;*/
   border-bottom: 2px solid #745024;
-/*  padding-bottom: 5px;
-*/
 }
 
 .nav-tabs { /* overrode bootstrap style */
@@ -86,5 +83,59 @@ li {
   font-family: 'Roboto', Arial, sans-serif;
 }
 
+.my_btn {
+  margin-top: 5px;
+}
+
+/* 
+
+/* ----- ITEMS STYLES ----- */
+
+.wrapper {
+  background-color:rgba(204,218,243,0.5);
+  margin: 0 auto;
+  width: 75%;
+  padding: 5px 0 5px 23px;
+}
+
+.row {
+  width: 100%;
+  border-bottom: 1px solid white;
+}
+
+.item_name {
+    font-size: 1.3em;
+    width: 55%;
+    float: left;
+}
+
+.item_days {
+  width: 35%;
+  float: right;
+}
+
+/* ---- SHOW PAGE ELEMENTS ---- */
+
+.title {
+  width: 100%;
+  clear: right;
+}
+
+.title h1 {
+  display: block;
+  width: 45%;
+}
+
+.title small {
+  display: block;
+  width: 35%;
+  vertical-align: bottom;
+}
+
+#list_title {
+  font-size: 2.5em;
+  font-family: 'Shadows Into Light Two', cursive;
+  
+}
 
 
