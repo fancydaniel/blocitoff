@@ -32,6 +32,8 @@ gem 'devise'
 
 gem 'faker'
 
+gem 'figaro'
+
 group :development do
   gem 'sqlite3'
 
